@@ -23,6 +23,6 @@ async def on_message(self, message):
 @client.event
 async def on_message(message):
     if client.user.mentioned_in(message):
-        await message.channel.send(random.choice(list(open('quotes.txt'))))
+        await message.channel.send(random.sample(list(open('quotes.txt'))))
     
 client.run(TOKEN)
